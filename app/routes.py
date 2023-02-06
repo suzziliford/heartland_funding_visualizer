@@ -16,7 +16,7 @@ def index():
         },
         {
         'author':{'username': 'Hero'},
-        'body': 'Wear your helmet'
+        'body': 'Wear your helmet!'
         }
     ]
 
