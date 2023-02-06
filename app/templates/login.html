@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+<h1>Sign In</h1>
+<form action="" class="bg-white rounded mt-3 p-5" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <h1 class="text-center">Log In</h1>
+    {{ form.csrf_token }}
+
+    {{ form.username.label }}
+    {{ form.username(class='form-control', placeholder='Enter Username') }}
+    {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+    {{ form.password.label }}
+    {{ form.password(class='form-control', placeholder='Enter Password') }}
+    {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+    {{ form.remember_me() }} {{ form.remember_me.label}}
+    <!-- {{ form.remember_me(class='form-control', placeholder='Remember_me') }} -->
+
+    {{ form.submit(class='btn btn-primary w-100 mt-3') }}
+</form>
+<p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
+{% endblock %}
