@@ -10,18 +10,9 @@ from app.models import User, Data
 @app.route('/index')
 @login_required
 def index():
-    posts = [
-        {
-        'author': {'username': 'Youhou'},
-        'body': 'I hope the snow melts today'
-        },
-        {
-        'author':{'username': 'Hero'},
-        'body': 'Wear your helmet!'
-        }
-    ]
+    
 
-    return render_template('index.html', title='Home', posts=posts)
+    return render_template('index.html', title='Home')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -43,7 +34,7 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return render_template('logout.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -96,7 +87,7 @@ labels = [
 
 
 colors = [
-    "rgb(142, 235, 142)", "rgb(111, 156, 228)", "rgb(144, 208, 237)", "#FEDCBA",
+    "rgb(142, 235, 142)", "rgb(111, 156, 228)", "rgb(144, 208, 237)", "rgb(188, 164, 232)",
     "red", "#DDDDDD", "#ABCABC", "#4169E1",
     "#C71585", "#FF4500", "#FEDCBA", "#46BFBD"]
 

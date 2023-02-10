@@ -30,7 +30,7 @@
             </div> -->
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Data Visualizer:</a>
+                  <a class="navbar-brand" href="#">Funding Visualizer:</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
@@ -41,20 +41,18 @@
                         {% if current_user.is_anonymous %}
                         <a class="nav-link" href="{{ url_for('register') }}">Register</a>
                         {% else %}
-                        <a class="nav-link active" href="{{ url_for('pie') }}">Graph</a>
+                        <a class="nav-link" href="{{ url_for('pie') }}">Data</a>
                         <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
                         {% endif %}
                     </div>
                   </div>
                 </div>
               </nav>
-            <div></div>
-            <hr>
             {% with messages = get_flashed_messages() %}
             {% if messages %}
             <ul>
                 {% for message in messages %}
-                <li>{{ message }}</li>
+                <li></li>
                 {% endfor %}
             </ul>
             {% endif %}

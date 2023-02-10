@@ -1,9 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ current_user.username }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    <div><p>{{data}}</p></div>
-    {% endfor %}
+<center>
+<div id="welcomeCont" class="container center bg-light rounded mt-5 p-5">
+    <div id="welcomeBlurb">
+        <h1 class="">WELCOME</h1><br>
+        
+        <h2> "Heartland Alliance"; <br>
+        <br>
+        Many Chicago-land residents will recognize the name, <br>
+        though ask what the organization does, and the response will most likely be vague; <br>
+        <br>
+        “Some sort of non-profit agency that helps the needy”? <br>
+        <br>
+        Very few residents will be able to tell you that the largest proponent of their funding actually 
+        goes toward the operation of child-migrant detention-centers. <br>
+        <br>
+        Check out the <a href="pie">data....</a></h2>
+        <p>Data source: Propublica. 2021. [Nonprofit Explorer]. Retrieved from https://projects.propublica.org/nonprofits/ </p>
+
+</div></center>
+   
 {% endblock %}

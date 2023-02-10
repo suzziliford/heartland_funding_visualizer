@@ -4,32 +4,61 @@ body{
     background-repeat: no-repeat;
     /* background-color: lightcoral; */
     background-color: navy;
+    margin: 0;
 }
 
 .container {  
     display: grid;
-    height: 100vh; 
+    height: 100%; 
+    max-width: 1550px;
+
+    
+    
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
       "heading heading heading heading heading heading"
-      "Pie Pie Pie years years legend"
-      "Pie Pie Pie years years legend"
-      "Pie Pie Pie years years legend"
+      "Pie Pie Pie years legend ."
+      "Pie Pie Pie years legend ."
+      "Pie Pie Pie years legend ."
       "footer footer footer footer footer footer";
   }
   
-  .Pie { grid-area: Pie; }
+  .Pie { grid-area: Pie; 
+        align-items: left;
+}
   
-  .years { grid-area: years; }
+  .years { grid-area: years;
+            text-align: left;
+        }
   
-  .legend { grid-area: legend; }
+  .legend { grid-area: legend; 
+    text-align: center;}
   
   .heading { grid-area: heading; }
   
   .footer { grid-area: footer; }
+
+  #login {
+    width: 100vh;
+    display: block;
+  }
+
+  #registerForm {
+    width: 100vh;
+    display: block;
+  }
+
+
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
 
 /* sticky-version */
 /* .container {  display: grid;
@@ -62,14 +91,39 @@ body{
   .headingSticky { grid-area: headingSticky; }
    */
   
-   h1 {
-    /* text-decoration-line: underline;
-    text-decoration: solid; */
-    text-shadow: 6px 6px 6px black;
+    /* .welcomeCont {
+        display: inline-block;
+        margin: auto;
+    } */
+    #welcomeCont {
+        display: inline-block;
+        margin: auto;
+        
+    }
+    #welcomeBlurb {
+        text-align: center;
+        background-color:rgb(232, 217, 200);
   }
 
-   h2 {
+    #loggedOut {
+        display: inline-block;
+        margin: auto;
+    }
+
+    #goodbye {
+        text-align: center;
+    }
+
+   /* .yearsTitle { */
+    /* text-decoration-line: underline;
+    text-decoration: solid; */
+    /* text-shadow: 6px 6px 6px black; */
+  /* } */
+
+   #yearsTitle {
     text-shadow: 6px 6px 6px black;
+    font-weight: bold;
+    letter-spacing: 8px;
    }
 
    #care {
@@ -79,6 +133,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3em;
     font-weight: bold;
+    border-radius: 12px;
     }
 
     #health {
@@ -88,13 +143,32 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3em;
     font-weight: bold;
+    border-radius: 12px;
     }
     #international {
         background-color: rgb(142, 235, 142);
+        text-shadow: 1px 1px 2px white;
+        border: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.3em;
+        font-weight: bold;
+        border-radius: 12px;
     }
     #rights {
         background-color: rgb(144, 208, 237);
+        text-shadow: 1px 1px 2px white;
+        border: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.3em;
+        font-weight: bold;
+        border-radius: 12px;
     }
     #housing {
-        background-color: rgb(188, 164, 232);     
+        background-color: rgb(188, 164, 232); 
+        text-shadow: 1px 1px 2px white;
+        border: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.3em;
+        font-weight: bold;
+        border-radius: 12px;    
     }
