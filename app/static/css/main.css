@@ -1,0 +1,100 @@
+body{
+    background-image: url('6C.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-color: lightcoral; */
+    background-color: navy;
+}
+
+.container {  
+    display: grid;
+    height: 100vh; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "heading heading heading heading heading heading"
+      "Pie Pie Pie years years legend"
+      "Pie Pie Pie years years legend"
+      "Pie Pie Pie years years legend"
+      "footer footer footer footer footer footer";
+  }
+  
+  .Pie { grid-area: Pie; }
+  
+  .years { grid-area: years; }
+  
+  .legend { grid-area: legend; }
+  
+  .heading { grid-area: heading; }
+  
+  .footer { grid-area: footer; }
+
+/* sticky-version */
+/* .container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1.1fr 0.9fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "headingSticky headingSticky headingSticky headingSticky headingSticky headingSticky"
+      "graphSticky graphSticky graphSticky yearsSticky yearsSticky legendSticky"
+      "graphSticky graphSticky graphSticky yearsSticky yearsSticky legendSticky"
+      "graphSticky graphSticky graphSticky yearsSticky yearsSticky legendSticky"
+      "graphSticky graphSticky graphSticky . . ."
+      "graphSticky graphSticky graphSticky . . ."
+      "graphSticky graphSticky graphSticky . . ."
+      "graphSticky graphSticky graphSticky . . ."
+      "graphSticky graphSticky graphSticky . . ."
+      "graphSticky graphSticky graphSticky . . ."
+      "footerSticky footerSticky footerSticky footerSticky footerSticky footerSticky";
+  }
+  
+  .footerSticky { grid-area: footerSticky; }
+  
+  .yearsSticky { grid-area: yearsSticky; }
+  
+  .legendSticky { grid-area: legendSticky; }
+  
+  .graphSticky { grid-area: graphSticky; }
+  
+  .headingSticky { grid-area: headingSticky; }
+   */
+  
+   h1 {
+    /* text-decoration-line: underline;
+    text-decoration: solid; */
+    text-shadow: 6px 6px 6px black;
+  }
+
+   h2 {
+    text-shadow: 6px 6px 6px black;
+   }
+
+   #care {
+    background-color: red;
+    text-shadow: 1px 1px 2px white;
+    border: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    }
+
+    #health {
+    background-color: rgb(111, 156, 228);
+    text-shadow: 1px 1px 2px white;
+    border: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    }
+    #international {
+        background-color: rgb(142, 235, 142);
+    }
+    #rights {
+        background-color: rgb(144, 208, 237);
+    }
+    #housing {
+        background-color: rgb(188, 164, 232);     
+    }

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="" class="bg-white rounded mt-3 p-5" method="post">
+    <h1 class="text-center">Enter Year</h1>
+
+    {{ form.year.label }}
+    {{ form.year(class='form-control', placeholder='Enter year') }}
+    {% for error in form.year.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+    {{ form.submit(class='btn btn-primary w-100 mt-3') }}
+
+</form>
+
+<h1>Data</h1>
+<p>Health Total Revenue 2020: {{ health_data['filings_with_data'][0]['totrevenue'] }}</p>
+<p>Health Total Revenue 2019: {{ health_data['filings_with_data'][1]['totrevenue'] }}</p>
+<p>International Total Revenue 2020: {{ international_data['filings_with_data'][0]['totrevenue'] }}</p>
+<p>Human Needs Total Revenue 2020: {{ human_needs_data['filings_with_data'][0]['totrevenue'] }}</p>
+<p>Care Services Total Revenue 2020: {{ care_services_data['filings_with_data'][0]['totrevenue'] }}</p>
+<p>Housing Total Revenue 2020: {{ housing_data['filings_with_data'][0]['totrevenue'] }}</p>
+<p>EIN: {{ health_data.ein }}</p>
+{% endblock %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visalizer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body> -->
+    <div class="chart">
+        <canvas id="heartlandPie" width="900" height="'400"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById("heartlandPie").getContext("2d");
+        var heartlandPie = new Chart(ctx, {
+            type: "pie",
+            data: {
+                labels: 
+                {{ health_data['filings_with_data'][0]['totrevenue'] | safe }},
+                {{ international_data['filings_with_data'][0]['totrevenue'] }},
+                datasets: [{
+                    label: 'My First Dataset',
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                    ],
+                    hoverOffset: 4
+                }];
+            }
+        }
+
+    </script>
+<!-- </body>
+</html> -->

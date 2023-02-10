@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Data Visualizer | Funding</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+</head>
+
+<body text="#ffffff" style="background-color: lightcoral ;">
+    <h1 text="#ffffff" >Funding Breakdown</h1>
+    <form action="" class="bg-white rounded mt-3 p-5" method="post">
+        <!-- <h4 class="text-center">Enter Year</h4> -->
+    
+        {{ form.year.label }}
+        {{ form.year(class='form-control', placeholder='Enter year') }}
+        {% for error in form.year.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+    
+        {{ form.submit(class='btn btn-primary w-100 mt-3') }}
+    
+    </form>
+
+    
+        <canvas id="chart" width="1000" height="700"></canvas>
+        <script>
+          // bar chart data
+          var barData = {
+            labels : [
+              {% for item in labels %}
+               "{{ item }}",
+              {% endfor %}
+        ],
+    
+            datasets : [{
+              fillColor: "rgba(151,187,205,0.2)",
+              strokeColor: "rgba(151,187,205,1)",
+              pointColor: "rgba(151,187,205,1)",
+              data : [
+                {% for item in values %}
+                   "{{ item }}",
+                  {% endfor %}
+            ]
+              }
+            ]
+          }
+    
+         // get bar chart canvas
+         var mychart = document.getElementById("chart").getContext("2d");
+    
+           steps = 10
+           max = {{max}}
+    
+         // draw bar chart
+         new Chart(mychart).Bar(barData, {
+           scaleOverride: true,
+           scaleSteps: steps,
+           scaleStepWidth: Math.ceil(max / steps),
+           scaleStartValue: 0,
+           scaleShowVerticalLines: true,
+           scaleShowGridLines : true,
+           barShowStroke : true,
+           scaleShowLabels: true
+           }
+         );
+    
+        </script>
+    
+    <!-- <script scr="{{ url_for('static', filename='js/main.js') }}"></script> -->
+</body>
+</html>

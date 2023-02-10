@@ -34,24 +34,48 @@ class User(db.Model, UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
     
-# class Data():
-#     def get_request_ha_health():
-#         response = requests.get("http://https://projects.propublica.org/nonprofits/api/v2/organizations/363775696.json")
-#         health_data = response.json
+class Data():
 
-#     def get_request_ha_international():
-#         response = requests.get("https://projects.propublica.org/nonprofits/api/v2/organizations/300739799.json")
-#         international_data = response.json
-
-#     def get_request_ha_human_needs():
-#         response = requests.get("https://projects.propublica.org/nonprofits/api/v2/organizations/361877640.json")
-#         human_needs_data = response.json
-
-#     def get_request_ha_care_services():
-#         response = requests.get("https://projects.propublica.org/nonprofits/api/v2/organizations/36-4053244.json")
-#         care_services_data = response.json
-
-#     def get_request_ha_housing():
-#         response = requests.get("https://projects.propublica.org/nonprofits/api/v2/organizations/36-3642952.json")
-#         housing_data = response.json
+    def get_request_ha_international():
+        response = requests.get("https://projects.propublica.org/nonprofits/api/v2/organizations/300739799.json")
+        if response.status_code == 200:
+            international_data = response.json()
+            return international_data
+        else:
+            return None
         
+
+    def get_request_ha_health():
+        response = requests.get("https://projects.propublica.org/nonprofits/api/v2/organizations/363775696.json")
+        if response.status_code == 200:
+            health_data = response.json()
+            return health_data
+        else:
+            return None
+        
+    def get_request_ha_human_needs():
+        response = requests.get("https://projects.propublica.org/nonprofits/api/v2/organizations/361877640.json")
+        if response.status_code == 200:
+            human_needs_data = response.json()
+            return human_needs_data
+        else:
+            return None
+
+    def get_request_ha_care_services():
+        response = requests.get("https://projects.propublica.org/nonprofits/api/v2/organizations/36-4053244.json")
+        if response.status_code == 200:
+            care_services_data = response.json()
+            return care_services_data
+        else:
+            return None
+
+    def get_request_ha_housing():
+        response = requests.get("https://projects.propublica.org/nonprofits/api/v2/organizations/36-3642952.json")
+        if response.status_code == 200:
+            housing_data = response.json()
+            return housing_data
+        else:
+            return None
+        
+    # def define_year():
+

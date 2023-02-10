@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+</head>
+
+<body text="#ffffff">
+
+    <div class="container">
+        <div class="heading">
+            <div class="container-fluid">
+                <!-- <h1 text="#ffffff" >HeartLand Alliance Funding By Year</h1> -->
+                <div class="row">
+                    <div class="col text-center text-light mt-5 p-4"><h1>HEARTLAND ALLIANCE FUNDING BY YEAR</h1></div>
+                </div>
+            </div>
+        </div>
+        <div id="pie" class="Pie">
+             <div class="col-5">
+                <canvas class="center mt-5 p-5" id="chart" width="500" height="500" ></canvas>
+                <!-- <div>
+                    <canvas id="chart" class="center mt-5 p-5" id="chart" width="500" height="500"></canvas>
+                  </div> -->
+                <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+                <script id="script" class="center mt-3 p-5">
+                    var pieData = [
+                    {% for item, label, colors in set %}
+                        {
+                        value: {{item}},
+                        label: "{{label}}",
+                        color : "{{colors}}"
+                        },
+                    {% endfor %}
+                    ];
+
+                    
+    
+
+                    new Chart(document.getElementById("chart").getContext("2d")).Pie(pieData);
+                    // chart.options.animation = false; // disables all animations --> -->
+                </script>
+            </div>
+        </div>
+
+        <!-- <div>
+            <canvas id="myChart" class="center mt-5 p-5" width="500" height="500"></canvas>
+          </div>
+          
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          
+          <script>
+            const ctx = document.getElementById('myChart');
+          
+            new Chart(ctx, {
+              type: 'pie',
+              data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                  label: '# of Votes',
+                  data: [12, 19, 3, 5, 2, 3],
+                  borderWidth: 1
+                }]
+              },
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              }
+            });
+          </script> -->
+
+        <div id="years" class="years">
+            <div class="col-5 mt-2">
+                <h2 class="text-center text-light mt-5" id="20">2020</h2>
+                <h2 class="text-center text-light mt-5" id="19">2019</h2>
+                <h2 class="text-center text-light mt-5" id="18">2018</h2>
+                <h2 class="text-center text-light mt-5" id="17">2017</h2>
+                <h2 class="text-center text-light mt-5" id="16">2016</h2>
+                <h2 class="text-center text-light mt-5" id="15">2015</h2>
+                <h2 class="text-center text-light mt-5" id="14">2014</h2>
+            </div>
+        </div>
+        <div class="legend">
+            <div class="col">
+                <div id="care" class="row border mt-5 p-3">CARE (Child Detention)</div>
+                    <div id="health" class="row border mt-5 p-3">HEALTH</div>
+                    <div id="international" class="row border mt-5 p-3">INTERNATIONAL</div>
+                    <div id="rights" class="row border mt-5 p-3">HUMAN RIGHTS</div>
+                    <div id="housing" class="row border mt-5 p-3">HOUSING</div>
+                </div>
+        </div>
+        <div class="footer mt-5 p-5"></div>
+    </div>
+
+
+
+
+    <!-- <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center text-light mt-3 p-4"><h1>HeartLand Alliance Funding By Year</h1></div>
+        </div>
+    </div> -->
+
+
+    <!-- <form action="" class="bg-white rounded mt-3 p-5" method="post">
+        
+    
+        {{ form.year.label }}
+        {{ form.year(class='form-control', placeholder='Enter year') }}
+        {% for error in form.year.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+    
+        {{ form.submit(class='btn btn-primary w-100 mt-3') }}
+    
+    </form> -->
+
+    <!-- <div class="container-xxl">
+        <div class="row">
+            <div class="col-5">
+                <canvas class="center mt-5 p-5" id="chart" width="500" height="500" ></canvas>
+                <script class="center mt-3 p-5">
+                    var pieData = [
+                    {% for item, label, colors in set %}
+                        {
+                        value: {{item}},
+                        label: "{{label}}",
+                        color : "{{colors}}"
+                        },
+                    {% endfor %}
+                    ];
+                    
+                    new Chart(document.getElementById("chart").getContext("2d")).Pie(pieData); -->
+                    <!-- chart.options.animation = false; // disables all animations -->
+                <!-- </script> -->
+            <!-- </div> -->
+            <!-- <div class="col-5 mt-2">
+                <h2 class="text-center text-light mt-5" id="20">2020</h2>
+                <h2 class="text-center text-light mt-5" id="19">2019</h2>
+                <h2 class="text-center text-light mt-5" id="18">2018</h2>
+                <h2 class="text-center text-light mt-5" id="17">2017</h2>
+                <h2 class="text-center text-light mt-5" id="16">2016</h2>
+                <h2 class="text-center text-light mt-5" id="15">2015</h2>
+                <h2 class="text-center text-light mt-5" id="14">2014</h2>
+            </div>
+
+            <div class="col-2">  -->
+                <!-- <h2 class="text-center text-light mt-3 p-4">Legend</h2> -->
+                <!-- <div class="col">
+                    <div class="row border mt-5 p-3 bg-white">HEALTH</div>
+                    <div class="row border mt-5 p-3 bg-success">INTERNATIONAL</div>
+                    <div class="row border mt-5 p-3 bg-primary">HUMAN RIGHTS</div>
+                    <div class="row border mt-5 p-3 bg-warning">CARES</div>
+                    <div class="row border mt-5 p-3 bg-info">HOUSING</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div> -->
+
+
+    <!-- <div>
+        <canvas id="myChart"></canvas>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        const ctx = document.getElementById('myChart');
+      
+        const data = {
+        labels: [
+            'Red',
+            'Blue',
+            'Yellow'
+        ],
+        datasets: [{
+            label: 'My First Dataset',
+            data: [300, 50, 100],
+            backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)'
+            ],
+            hoverOffset: 4
+        }]
+        };
+        const config = {
+            type: 'pie',
+            data: data,
+            };
+      </script> -->
+    
+
+      
+
+
+
+
+
+    <!-- <script src="./js/main.js"></script> -->
+    <!-- <script src="../js/main.js"></script> -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
+{% endblock%}
